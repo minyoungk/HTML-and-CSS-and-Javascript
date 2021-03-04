@@ -1,0 +1,27 @@
+<script>
+    // while 반복문
+    // 개발자들이 선호하지 않는 반복문
+    // 개발자가 실수하면 무한루프에 빠질수있다
+    // 개발자가 의도적으로 무한루프에 빠트리는경우도 있다(ex. 값을 계속 입력받고싶을때)
+
+    // 1~10 까지 더한값을 출력하시오
+
+    // 어떤박스(변수)가 있어야할까? 
+    // 1. Total값을 저장할변수
+    // 2. 1씩 counting 할 변수
+
+    total = 0;
+    count = 1;
+
+    while (count < 11) {
+        // total값에 count값을 누적
+        total = total + count;
+        count++; // count = count + 1;
+    }
+
+    alert(total);
+    // while (조건) {
+    //      반복될 소스
+    // }
+    
+</script>

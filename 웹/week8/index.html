@@ -1,0 +1,36 @@
+<script>
+    // 객체(object)
+    // 중괄호가지고 키와밸류가 쌍으로 이루어져있는형태
+
+    // JSON 하고 객체하고 같은건가요 ?
+    // 같지않아요
+    // 가장큰차이점
+    // 1. json은 단순텍스트 / 객체는 변수에 저장되는 자료형태
+    // 2. json은 밸류에 함수가 들어갈수없다 하지만 객체는 가능하다
+
+    // 객체 만들기
+    // 키값 : 밸류값
+    let fruitList = {
+        'apple' : 3000,
+        'orange' : 4000,
+        'good apple' : 5000
+    }
+
+    // 객체 접근 
+    // #1. 변수명.키값
+    // console.log(fruitList.apple)
+    // #2. 변수명['키값']
+    // fruitList['good apple']
+    // console.log(fruitList['apple'])
+    // let userSelectValue = 'apple';
+    // console.log(fruitList[userSelectValue])
+
+    // 객체에 값을 추가
+    fruitList['mango'] = 3500;
+    console.log(fruitList);
+
+    delete fruitList.mango;
+    console.log(fruitList);
+
+    
+</script>

@@ -1,0 +1,21 @@
+<script>
+    let fruitList = {
+        'banana' : 3000,
+        'apple' : 2000,
+        'mango' : 2500
+    }
+
+    // 키값 in 변수
+    // -> 키값이 존재하는지 체크하는방법
+
+    if ('banana' in fruitList) {
+        alert('존재합니다!');
+    }
+
+    // for (변수명 in 오브젝트) 
+    // 변수명의 키값이 넘어온다
+    for (let key in fruitList) {
+        alert(fruitList[key]);
+    }
+
+</script>

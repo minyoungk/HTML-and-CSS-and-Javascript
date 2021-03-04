@@ -1,0 +1,24 @@
+<script>
+    // 객체 안에 함수
+    // 객체 안에 있는 함수같은경우 "메소드" 라고 부른다
+
+    let user = {
+        'name' : '내현',
+        'age' : 20,
+        sayHi : function () {
+            alert('Hello ' + user.name)
+        }
+    }
+
+    // this
+    // -> 현재객체를 의미한다
+
+    let user = {
+        'name' : '내현',
+        'age' : 20,
+        sayHi : function () {
+            alert('Hello ' + this.name)
+        }
+    }
+
+</script>

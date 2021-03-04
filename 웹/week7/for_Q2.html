@@ -1,0 +1,14 @@
+<script>
+    // 2~10까지 가면서 소수인거만 출력
+
+    let number;
+
+    for(number=2; number<=10; number++){
+        for(let i=2; i<number; i++) {
+            if(number % i == 0) {
+                console.log(number+"는 소수가 아니다!");
+                break;
+            }
+        }
+    }
+</script>

@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>내현님의 첫번째 웹페이지</title>
+        <link rel="stylesheet" href="style_nh.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    </head>
+    <body>
+        <header id="navbar">
+            <!-- LOGO BOX -->
+            <div id="navbar_logo">
+                <a><i class="fab fa-apple"></i></a>
+                <a href="#">LOGO</a>
+            </div>
+
+            <!-- MENU BOX -->
+            <ul id="navbar_menu" class="mt-4">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">BOOKING</a></li>
+            </ul>
+
+            <!-- Icons Box -->
+            <ul id="navbar_icons" class="mt-10">
+                <li><a href="http://facebook.com"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+
+            <a href="#" class="navbar_toggleBtn">
+                <i class="fas fa-bars"></i>
+            </a>
+
+        </header>
+        
+    </body>
+</html>
+
+<script>
+    const toggleBtn = document.querySelector('.navbar_toggleBtn');
+    const menu = document.querySelector('#navbar_menu');
+    const icons = document.querySelector('#navbar_icons');
+
+    toggleBtn.addEventListener('click', ()=> {
+        console.log(menu);
+        menu.classList.toggle('active');
+        icons.classList.toggle('active');
+    })
+</script>

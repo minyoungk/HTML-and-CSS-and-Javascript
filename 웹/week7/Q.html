@@ -1,0 +1,19 @@
+<script>
+    function solution(s) {
+        let answer = '';
+
+        if (s.length % 2 == 1) {
+            //홀수
+            answer = s[Math.floor(s.length / 2)]
+        } else if (s.length % 2 == 0) {
+            //짝수            
+            answer = s[Math.floor(s.length / 2) - 1] + s[Math.floor(s.length / 2)]
+            console.log(answer);
+        }
+
+        return answer;
+    }
+
+    let result = solution("abcdef");
+
+</script>

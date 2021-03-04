@@ -1,0 +1,27 @@
+<script>
+    // let user = { 'name' : '내현' } // f0cda0af
+    // let user2 = user; // Call by ref 
+
+    // user2.name = '민영'
+
+    // console.log(user);
+    // console.log(user2);
+
+     // 오브젝트복사
+
+     let fruitList = {
+         'apple' : 3000,
+         'banana' : 5000,
+         'orange' : 2000
+     };
+
+     let copyFruitList = {};
+
+     for (let key in fruitList) {
+        copyFruitList[key] = fruitList[key] // Call by value
+     }
+
+     copyFruitList.apple = 4000;
+     console.log(fruitList);
+
+</script>

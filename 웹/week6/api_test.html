@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Bitcoin Price</title>
+    </head>
+    <body>
+        Bitcoin Opening Price : <sapn class="opening_price">0</sapn>won
+    </body>
+</html>
+
+<script>
+    // API - 특정한 기능을 만들어둔것
+    // 특정한 기능을 사용하고싶은 사용자는 API를 호출(벨을 클릭)하여 사용한다
+
+    // HTTP를 응용해서 API를 사용
+
+    // 빗썸에서 비트코인 시세를 받아온다음 보여주게끔
+
+    // AJAX 통신 - 페이지 이동없이 브라우저에서 HTTP통신을 하기 위한 방법
+    // 동시에 실행 되는걸 방지하기 위한 방법
+    // 1. Promise - O
+    // 2. async, await
+
+    const opening_price = document.querySelector('.opening_price')
+
+    fetch('http://random-word-api.herokuapp.com/word?number=30') // #1. HTTP 요청
+        .then(function(response) { // #2. 요청을 하고나면 응답값이 response라고 하는 변수에 담겨진다
+            return response.json(); // #3. response에 body에 있는 텍스트값을 json으로 바꿔서 다음 Then한테 넘겨줌
+        })
+        .then(function(result){ // result라는 변수가 json으로 바뀐값을 받음
+            console.log(result);
+        })
+        
+    
+    
+</script>

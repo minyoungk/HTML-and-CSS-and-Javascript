@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <title>Guessing Game</title>
+        <style>
+            .resetBtn {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <p class="guesses"></p>
+        <p class="lastResult"></p>
+        <p class="lowOrHi"></p>
+        <label for="guessField">Enter a guess: </label>
+        <input type="text" id="guessField" class="guessField">
+        <input type="submit" value="Submit guess" class="guessSubmit">
+        <input type="button" value="reset" class="resetBtn">
+    </body>
+</html>
+<script>
+    // script내용 입력
+    //var 변수명 = 들어갈값 : var은 예전방식
+    //let 변수명 = 들어갈값
+    //const 변수명 = 들어갈값 : 얘는 한번 정의하면 수정이 불가능하다
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+    let guesses = document.querySelector('.guesses');
+    let lastResult = document.querySelector('.lastResult');
+    let lowOrHi = document.querySelector('.lowOrHi');
+
+    let guessSubmit = document.querySelector('.guessSubmit');
+    let guessField = document.querySelector('.guessField');
+    let resetButton = document.querySelector('.resetBtn');
+    let guessCount = 1;
+
+    
+    // function 함수명(인자값1,인자값2...)
+    // 인자값은 있을수도 없을수도 있다
+    function checkGuess() {
+        let userGuess = Number(guessField.value);
+        
+        //조건 if(조건) { }
+        if(isNaN(userGuess)) {
+            alert('숫자만 입력해주세요!');
+            return false; // 뒤에 있는 소스는 진행하지않고 함수 종료
+        }
+
+        // 사용자가 입력한값이 노출
+        if (guessCount === 1) {
+            guesses.textContent = 'Previous guesses: '
+        }
+        guesses.textContent = guesses.textContent + userGuess + ' ' // Previous guesses: 5 10
+
+        // 사용자의 입력값이 컴퓨터의 랜덤한값과 동일한지 체크
+        if (userGuess === randomNumber) {
+            lastResult.textContent = 'Congratulations! You got it right';
+            lowOrHi.textContent = '';
+            guessField.disabled = true;
+            resetButton.style.display="block";
+        } else {
+            lastResult.textContent = 'Wrong';
+
+            // 값이 high인지 row인지 알려주는 부분
+            if (userGuess > randomNumber) {
+                lowOrHi.textContent = 'Last Guess was too high!';
+            } else if (userGuess < randomNumber) {
+                lowOrHi.textContent = 'Last Guess was too row';
+            }
+        }
+
+        guessCount++; // 값을 1증가시킴
+
+        guessField.value = '';
+
+        if (guessCount === 10) {
+            lastResult.textContent = 'GAME OVER';
+            guessField.disabled = true;
+            resetButton.style.display="block";
+        }
+
+    }
+
+    function reset() {
+        guessCount = 1;
+        randomNumber = Math.floor(Math.random() * 100) + 1;
+        guessField.disabled = false;
+        lastResult.textContent = '';
+        lowOrHi.textContent = '';
+        guesses.textContent = '';
+        resetButton.style.display = "none";
+    }
+
+    // 함수호출시 함수명(인자값1,인자값2...)
+    resetButton.addEventListener('click', reset);
+    guessSubmit.addEventListener('click', checkGuess);
+    guessField.addEventListener('keypress', function(e){
+        if (e.key === 'Enter') {
+            checkGuess();
+        }
+    })
+
+</script>
